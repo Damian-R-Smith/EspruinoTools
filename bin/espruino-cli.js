@@ -34,6 +34,7 @@ for (var i=2;i<process.argv.length;i++) {
    else if (arg=="-m" || arg=="--minify") args.minify = true;
    else if (arg=="-t" || arg=="--time") args.setTime = true;
    else if (arg=="--ble") args.ble = true;
+   else if (arg=="-w" || arg=="--watch")args.watch = true;
    else if (arg=="-p" || arg=="--port") { 
      args.ports.push(next); 
      var j = (++i) + 1;
@@ -109,6 +110,7 @@ if (args.help) {
   "  --ble                   : Try and connect with Bluetooth Low Energy (using the 'bleat' module)",  
   "  -t,--time               : Set Espruino's time when uploading code",
   "  -o out.js               : Write the actual JS code sent to Espruino to a file",
+  "  -w, --watch     : Add watcher to a file to auto upload when changed.",
   "  -f firmware.bin[:N]     : Update Espruino's firmware to the given file",
   "                              Espruino must be in bootloader mode.",
   "                              Optionally skip N first bytes of the bin file.",
